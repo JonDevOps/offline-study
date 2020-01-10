@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <link href="Hidden_video_example_data/samples.css" rel="stylesheet" type="text/css">
+        
+        <title>Introduction to events - Hidden_example - code sample</title>
+    </head>
+    <body>
+        
+            
+
+  
+    <meta charset="utf-8">
+    <title>Useful event target example</title>
+    <style>
+      div {
+        background-color: red;
+        height: 100px;
+        width: 25%;
+        float: left;
+      }
+    </style>
+  
+  
+    <script>
+      for (var i = 1; i <= 16; i++) {
+        var myDiv = document.createElement('div');
+        document.body.appendChild(myDiv);
+      }
+
+      function random(number) {
+        return Math.floor(Math.random()*number);
+      }
+
+      function bgChange() {
+        var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        return rndCol;
+      }
+
+      var divs = document.querySelectorAll('div');
+
+      for (var i = 0; i < divs.length; i++) {
+        divs[i].onclick = function(e) {
+          e.target.style.backgroundColor = bgChange();
+        }
+      }
+    </script><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  
+
+        
+        
+    
+</body></html>

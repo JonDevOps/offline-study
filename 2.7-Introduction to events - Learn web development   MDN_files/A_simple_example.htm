@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <link href="Hidden_video_example_data/samples.css" rel="stylesheet" type="text/css">
+        
+        <style type="text/css">
+            button { margin: 10px };
+        </style>
+        
+        <title>Introduction to events - A_simple_example - code sample</title>
+    </head>
+    <body>
+        
+            <button>Change color</button>
+        
+        
+            <script>
+                var btn = document.querySelector('button');
+
+function random(number) {
+  return Math.floor(Math.random()*(number+1));
+}
+
+btn.onclick = function() {
+  var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}
+            </script>
+        
+    
+</body></html>
