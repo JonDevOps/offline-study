@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="myCanvas" width="672" height="260">
+      <p>Add suitable fallback here.</p>
+    </canvas>
+
+    <script>
+
+      var canvas = document.querySelector('.myCanvas');
+      var width = canvas.width = window.innerWidth;
+      var height = canvas.height = window.innerHeight;
+      var ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'rgb(0,0,0)';
+      ctx.fillRect(0,0,width,height);
+
+      var image = new Image();
+      image.src = 'firefox.png';
+      image.onload = function() {
+        ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175);
+      }
+    </script>
+  
+
+</body></html>

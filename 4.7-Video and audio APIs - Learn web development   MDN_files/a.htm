@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<meta charset="utf-8">
+  	<title>Video player example</title>
+  	<link rel="stylesheet" type="text/css" href="a_data/style.css">
+  </head>
+  <body>
+      <div class="player">
+        <video>
+          <source src="a_data/sintel-short.mp4" type="video/mp4">
+          <source src="a_data/sintel-short.webm" type="video/webm">
+          <!-- fallback content here -->
+        </video>
+        <div class="controls" style="visibility: visible;">
+          <button class="play" data-icon="P" aria-label="play pause toggle"></button>
+          <button class="stop" data-icon="S" aria-label="stop"></button>
+          <div class="timer"><div></div><span aria-label="timer">00:00</span></div>
+          <button class="rwd" data-icon="B" aria-label="rewind"></button>
+          <button class="fwd" data-icon="F" aria-label="fast forward"></button>
+        </div>
+      </div>
+    <p>Sintel © copyright Blender Foundation | <a href="http://www.sintel.org/">www.sintel.org</a>.</p>
+    <script src="a_data/custom-player.js"></script>
+  
+
+</body></html>
