@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <link href="Hidden_code_data/samples.css" rel="stylesheet" type="text/css">
+        
+        <title>A first splash into JavaScript - Hidden_code - code sample</title>
+    </head>
+    <body>
+        
+            
+
+  
+    <meta charset="utf-8">
+    <title>JavaScript console</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #0C323D;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #0C323D;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+
+    </style>
+  
+  
+
+    
+  
+
+  <script>
+    let geval = eval;
+
+    function createInput() {
+      let inputDiv = document.createElement('div');
+      let inputPara = document.createElement('p');
+      let inputForm = document.createElement('input');
+
+      inputDiv.setAttribute('class','input');
+      inputPara.textContent = '>';
+      inputDiv.appendChild(inputPara);
+      inputDiv.appendChild(inputForm);
+      document.body.appendChild(inputDiv);
+      inputDiv.focus();
+
+      if(document.querySelectorAll('div').length > 1) {
+        inputForm.focus();
+      }
+
+      inputForm.addEventListener('change', executeCode);
+    }
+
+    function executeCode(e) {
+      let result;
+      try {
+        result = geval(e.target.value);
+      } catch(e) {
+        result = 'error — ' + e.message;
+      }
+
+      let outputDiv = document.createElement('div');
+      let outputPara = document.createElement('p');
+
+      outputDiv.setAttribute('class','output');
+      outputPara.textContent = 'Result: ' + result;
+      outputDiv.appendChild(outputPara);
+      document.body.appendChild(outputDiv);
+
+      e.target.disabled = true;
+      e.target.parentNode.style.opacity = '0.5';
+
+      createInput()
+    }
+    
+    createInput();
+
+  </script><div class="input"><p>&gt;</p><input></div>
+
+        
+        
+    
+</body></html>
